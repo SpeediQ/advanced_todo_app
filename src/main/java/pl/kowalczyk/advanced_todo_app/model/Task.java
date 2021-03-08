@@ -8,20 +8,20 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "tasks")
 public class Task {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @NotBlank(message = "Description must not be null")
+    @NotBlank(message = "Task's description must not be empty")
     private String description;
     private boolean done;
 
-    public Task() {
+    Task() {
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 
@@ -29,7 +29,7 @@ public class Task {
         return description;
     }
 
-    public void setDescription(String description) {
+    void setDescription(final String description) {
         this.description = description;
     }
 
@@ -37,7 +37,7 @@ public class Task {
         return done;
     }
 
-    public void setDone(boolean done) {
+    void setDone(final boolean done) {
         this.done = done;
     }
 }
