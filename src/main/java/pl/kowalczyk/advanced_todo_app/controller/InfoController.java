@@ -1,19 +1,19 @@
 package pl.kowalczyk.advanced_todo_app.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pl.kowalczyk.advanced_todo_app.TaskConfigurationProperties;
 
 @RestController
 public class InfoController {
-
-    @Autowired
     private DataSourceProperties dataSource;
+    private TaskConfigurationProperties myProp;
 
-    @Value("${task.allowMultipleTasksFromTemplate}")
-    private String myProp;
+    public InfoController(final DataSourceProperties dataSource, final TaskConfigurationProperties myProp) {
+        this.dataSource = dataSource;
+        this.myProp = myProp;
+    }
 
     @GetMapping("/info/url")
     String url() {
@@ -21,7 +21,8 @@ public class InfoController {
     }
 
     @GetMapping("/info/prop")
-    String myProp() {
-        return myProp;
+    boolean myProp() {
+        return myProp.isAllowMultipleTasksFromTemplate();
     }
+
 }
