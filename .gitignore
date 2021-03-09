@@ -34,4 +34,4 @@ build/
 
 
 ### Credentials ###
-application-prod.yml
+*.yml
