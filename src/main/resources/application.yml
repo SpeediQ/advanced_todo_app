@@ -1,12 +1,9 @@
 spring:
-    main:
-      banner-mode: off
-    h2:
-      console:
-        enabled: true
-        path: /console
-    datasource:
-      url: jdbc:h2:mem:todo-db
+  main:
+    banner-mode: off
+  profiles:
+    active: prod
+
 
 
 
