@@ -2,9 +2,7 @@ spring:
   main:
     banner-mode: off
   profiles:
-    active: prod
-task.allowMultipleTasksFromTemplate: true
-
-
-
-
+    active: local
+task:
+  template:
+    allowMultipleTasks: true

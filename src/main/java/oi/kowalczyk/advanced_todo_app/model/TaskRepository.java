@@ -1,4 +1,4 @@
-package pl.kowalczyk.advanced_todo_app.model;
+package oi.kowalczyk.advanced_todo_app.model;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

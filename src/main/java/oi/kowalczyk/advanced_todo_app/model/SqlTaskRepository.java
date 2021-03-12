@@ -1,4 +1,4 @@
-package pl.kowalczyk.advanced_todo_app.model;
+package oi.kowalczyk.advanced_todo_app.model;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

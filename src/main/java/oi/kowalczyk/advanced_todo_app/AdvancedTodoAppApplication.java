@@ -1,11 +1,9 @@
-package pl.kowalczyk.advanced_todo_app;
+package oi.kowalczyk.advanced_todo_app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
-import pl.kowalczyk.advanced_todo_app.model.Task;
-import pl.kowalczyk.advanced_todo_app.model.TaskRepository;
 
 import javax.validation.Validator;
 
