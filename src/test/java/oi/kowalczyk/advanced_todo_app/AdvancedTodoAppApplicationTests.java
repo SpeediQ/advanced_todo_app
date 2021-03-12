@@ -1,4 +1,4 @@
-package pl.kowalczyk.advanced_todo_app;
+package oi.kowalczyk.advanced_todo_app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

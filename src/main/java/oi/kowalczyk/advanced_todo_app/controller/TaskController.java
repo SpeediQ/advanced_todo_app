@@ -1,12 +1,12 @@
-package pl.kowalczyk.advanced_todo_app.controller;
+package oi.kowalczyk.advanced_todo_app.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.kowalczyk.advanced_todo_app.model.Task;
-import pl.kowalczyk.advanced_todo_app.model.TaskRepository;
+import oi.kowalczyk.advanced_todo_app.model.Task;
+import oi.kowalczyk.advanced_todo_app.model.TaskRepository;
 
 import javax.validation.Valid;
 import java.net.URI;

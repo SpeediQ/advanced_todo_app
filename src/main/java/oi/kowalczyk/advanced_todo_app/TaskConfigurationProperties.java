@@ -1,4 +1,4 @@
-package pl.kowalczyk.advanced_todo_app;
+package oi.kowalczyk.advanced_todo_app;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

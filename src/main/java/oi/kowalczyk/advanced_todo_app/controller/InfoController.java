@@ -1,10 +1,10 @@
-package pl.kowalczyk.advanced_todo_app.controller;
+package oi.kowalczyk.advanced_todo_app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pl.kowalczyk.advanced_todo_app.TaskConfigurationProperties;
+import oi.kowalczyk.advanced_todo_app.TaskConfigurationProperties;
 
 @RestController
 public class InfoController {
