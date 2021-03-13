@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import oi.kowalczyk.advanced_todo_app.model.Task;
 import oi.kowalczyk.advanced_todo_app.model.TaskRepository;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
@@ -55,6 +56,17 @@ class TaskController {
         }
         toUpdate.setId(id);
         repository.save(toUpdate);
+        return ResponseEntity.noContent().build();
+    }
+    @Transactional
+    @PatchMapping("/tasks/{id}")
+    public ResponseEntity<?> toggleTask(@PathVariable int id) {
+        if (!repository.existsById(id)) {
+            logger.info("Not Found Task to delete (id: " + id + ")");
+            return ResponseEntity.notFound().build();
+        }
+        repository.findById(id)
+                .ifPresent(task -> task.setDone(!task.isDone()));
         return ResponseEntity.noContent().build();
     }
 }

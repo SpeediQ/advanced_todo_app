@@ -10,5 +10,7 @@ public class V2__insert_example_task extends BaseJavaMigration {
     public void migrate(final Context context) {
         new JdbcTemplate(new SingleConnectionDataSource(context.getConnection(), true))
                 .execute("insert into tasks (description, done) values ('Learn Java migrations', true)");
+        new JdbcTemplate(new SingleConnectionDataSource(context.getConnection(), true))
+                .execute("insert into tasks (description, done) values ('Learn Java migrations2', true)");
     }
 }

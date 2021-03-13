@@ -3,6 +3,7 @@ package oi.kowalczyk.advanced_todo_app.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tasks")
@@ -13,6 +14,8 @@ public class Task {
     @NotBlank(message = "Task's description must not be empty")
     private String description;
     private boolean done;
+//    @Column()
+    private LocalDateTime deadline;
 
     Task() {
     }
@@ -37,7 +40,15 @@ public class Task {
         return done;
     }
 
-    void setDone(final boolean done) {
+    public void setDone(final boolean done) {
         this.done = done;
+    }
+
+    public LocalDateTime getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(LocalDateTime deadline) {
+        this.deadline = deadline;
     }
 }
