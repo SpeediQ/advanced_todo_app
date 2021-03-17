@@ -14,8 +14,12 @@ public class Task {
     @NotBlank(message = "Task's description must not be empty")
     private String description;
     private boolean done;
-//    @Column()
     private LocalDateTime deadline;
+    @Embedded
+    private Audit audit = new Audit();
+    @ManyToOne
+    @JoinColumn(name = "task_group_id")
+    private TaskGroup group;
 
     Task() {
     }
@@ -24,7 +28,7 @@ public class Task {
         return id;
     }
 
-    public void setId(final int id) {
+    void setId(final int id) {
         this.id = id;
     }
 
@@ -51,4 +55,21 @@ public class Task {
     public void setDeadline(LocalDateTime deadline) {
         this.deadline = deadline;
     }
+
+    TaskGroup getGroup() {
+        return group;
+    }
+
+    public void setGroup(TaskGroup group) {
+        this.group = group;
+    }
+
+    public void updateFrom(Task source) {
+        description = source.description;
+        done = source.done;
+        deadline = source.deadline;
+        group = source.group;
+    }
+
+
 }
