@@ -7,7 +7,7 @@ import java.util.Set;
 
 
 @Entity
-@Table(name = "tasks_groups")
+@Table(name = "task_groups")
 public class TaskGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,8 +19,11 @@ public class TaskGroup {
 //    private Audit audit = new Audit();
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "group")
     private Set<Task> tasks;
+    @ManyToOne
+    @JoinColumn(name = "project_id")
+    private Project project;
 
-    TaskGroup() {
+    public TaskGroup() {
     }
 
     public int getId() {
@@ -35,7 +38,7 @@ public class TaskGroup {
         return description;
     }
 
-    void setDescription(final String description) {
+    public void setDescription(final String description) {
         this.description = description;
     }
 
@@ -53,5 +56,13 @@ public class TaskGroup {
 
     public void setTasks(Set<Task> tasks) {
         this.tasks = tasks;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
     }
 }
